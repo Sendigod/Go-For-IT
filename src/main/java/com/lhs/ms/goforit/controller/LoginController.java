@@ -5,6 +5,8 @@ import com.lhs.ms.goforit.model.request.LoginReq;
 import com.lhs.ms.goforit.model.request.RegisterReq;
 import com.lhs.ms.goforit.model.response.BaseResponse;
 import com.lhs.ms.goforit.model.response.LoginRes;
+import com.lhs.ms.goforit.service.LoginService;
+import com.lhs.ms.goforit.service.RegisterService;
 import com.lhs.ms.goforit.service.impl.LoginServiceImpl;
 import com.lhs.ms.goforit.service.impl.RegisterServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +25,10 @@ import javax.servlet.http.HttpServletRequest;
 public class LoginController {
 
     @Autowired
-    private LoginServiceImpl loginService;
+    private LoginService loginService;
 
     @Autowired
-    private RegisterServiceImpl registerService;
+    private RegisterService registerService;
 
     @PostMapping("/login")
     public BaseResponse loginHandle(@RequestBody LoginReq req, HttpServletRequest request){
